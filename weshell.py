@@ -24,10 +24,6 @@ def do_shell(msg):
     elif text[:2] == 'cd':
         os.chdir(text[3:])
         sendMessage(comm_pwd(), msg['FromUserName'])
-    elif 'cat' in text:
-        sendMessage('Access Denied', msg['FromUserName'])
-    elif 'tac' in text:
-        sendMessage('Access Denied', msg['FromUserName'])
     else:
         response = os.popen(text, mode='r').read()
         if response == '' or response == None:
